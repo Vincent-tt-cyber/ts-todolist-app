@@ -1,12 +1,11 @@
 import React, { useRef } from "react";
 
-export interface INewTodoFormProps {
-  //   value: string;
-  //   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+export interface INewItemProps {
+  placeholder: string;
   handleClick: (text: string) => void;
 }
 
-const NewTodoForm = ({ handleClick }: INewTodoFormProps) => {
+const NewItem = ({ handleClick, placeholder }: INewItemProps) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const onClick = () => {
@@ -21,7 +20,7 @@ const NewTodoForm = ({ handleClick }: INewTodoFormProps) => {
       <input
         ref={inputRef}
         type="text"
-        placeholder="New Todo"
+        placeholder={placeholder}
         // value={value}
         // onChange={(event) => event.target}
       />
@@ -30,4 +29,4 @@ const NewTodoForm = ({ handleClick }: INewTodoFormProps) => {
   );
 };
 
-export default NewTodoForm;
+export default NewItem;
